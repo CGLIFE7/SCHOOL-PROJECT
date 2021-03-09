@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+/*This sets up the CSS grid*/
+
+.grid {
+    display: grid;
+    grid-template-rows: 0.4fr 0.5fr 6fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* grid-template-columns: 1fr 2fr 1fr; */
+    /*This defines the areas of your grid. 
+	There are four rows and three columns in this one*/
+    grid-template-areas: "nav nav nav" "header header header" "main main aside2" "footer footer footer";
+    grid-gap: .0em;
+    /*Sets grid to take up entire area of vertical viewport (i.e. entire screen)*/
+    min-height: 97vh;
+}
+
+.header {
+    /*This line assigns this css to the grid area named "header"*/
+    grid-area: header;
+    background-color: #E09B3A;
+}
+
+.cglife {
+    font-family: Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #FF9F1C;
+    padding-left: 50px;
+}
+
+.main {
+    padding-left: 20px;
+    grid-area: main;
+    background-color: #FCF6EE;
+}
+
+.aside1 {
+    grid-area: aside1;
+    background-color: seagreen;
+}
+
+.aside2 {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding: 10;
+    grid-area: aside2;
+    background-color: #100B04
+}
+
+.footer {
+    padding-left: 50px;
+    grid-area: footer;
+    background-color: #B39264;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    float: left;
+}
+
+
+/* ~~ Top Navigation Bar ~~ */
+
+#navigation-container {
+    width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.navigation-bar {
+    height: 70px;
+    width: 100%;
+    text-align: center;
+}
+
+.navigation-bar img {
+    float: left;
+}
+
+.navigation-bar ul {
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.navigation-bar li {
+    float: right;
+    list-style-type: none;
+    padding: 0px;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+}
+
+
+/* Solid border */
+
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+.navigation-bar li:first-child {
+    float: left;
+}
+
+.navigation-bar li a {
+    color: white;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 5px 15px;
+    opacity: 0.7;
+}
+
+#menu {
+    float: right;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid black;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.expand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    height: 100px;
+    /*set height*/
+    border: 2px solid blue;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.col1 {
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    color: white;
+}
+
+.white {
+    color: white;
+}
+
+
+/*This adds a responsive layout - always go from biggest device to smallest as the most recent CSS overrides previous CSS*/
+
+
+/*tablet*/
+
+@media (max-width: 770px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header header" "nav nav" "aside1 main" "aside2 aside2" "footer footer";
+    }
+}
+
+
+/*mobile*/
+
+@media (max-width: 400px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header" "nav" "aside1" "main" "aside2" "footer";
+    }
+}
+
+
+/* FLEX */
+
+.flex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
